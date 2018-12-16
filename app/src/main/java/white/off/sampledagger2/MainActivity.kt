@@ -1,10 +1,13 @@
 package white.off.sampledagger2
 
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import dagger.Component
 import white.off.sampledagger2.databinding.MainActivityBinding
+import white.off.sampledagger2.other.OtherActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         dataBinding.textView.text = coffeeMaker.getTemperature()
     }
 
+    fun onClick(v: View) {
+        val intent = Intent(this, OtherActivity::class.java)
+        startActivity(intent)
+    }
 }
 
 @Component
